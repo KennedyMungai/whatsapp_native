@@ -61,6 +61,7 @@ const OTPPage = () => {
 						styles.button,
 						phoneNumber !== '' ? styles.enabled : null
 					]}
+					disabled={phoneNumber === ''}
 				>
 					<Text
 						style={[
