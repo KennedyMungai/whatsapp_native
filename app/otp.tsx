@@ -55,6 +55,7 @@ const OTPPage = () => {
 						Terms of Service
 					</Text>
 				</Text>
+				<View style={{ flex: 1 }} />
 				<TouchableOpacity
 					onPress={sendOTP}
 					style={[
