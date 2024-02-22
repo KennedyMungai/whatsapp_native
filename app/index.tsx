@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
 import welcomeImage from '@/assets/images/welcome.png'
+import { Image, StyleSheet, Text, View } from 'react-native'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
