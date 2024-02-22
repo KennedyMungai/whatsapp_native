@@ -22,7 +22,7 @@ const Page = () => {
 					Terms of Service
 				</Text>
 			</Text>
-			<Link href={'/otp'}>
+			<Link href={'/otp'} asChild>
 				<TouchableOpacity style={styles.button}>
 					<Text style={styles.buttonText}>Agree & Continue</Text>
 				</TouchableOpacity>
