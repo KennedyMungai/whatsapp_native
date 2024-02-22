@@ -8,7 +8,7 @@ const PhoneNumberPage = () => {
 
 	return (
 		<View>
-			<Text>PhoneNumberPage</Text>
+			<Text>{phone}</Text>
 		</View>
 	)
 }
