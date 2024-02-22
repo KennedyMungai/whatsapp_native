@@ -36,8 +36,13 @@ const OTPPage = () => {
 				<View style={styles.list}>
 					<View style={styles.listItem}>
 						<Text style={styles.listItem}>Kenya</Text>
-						<Ionicons name='chevron-forward' size={20} color={Colors.gray} />
+						<Ionicons
+							name='chevron-forward'
+							size={20}
+							color={Colors.gray}
+						/>
 					</View>
+					<View style={styles.separator} />
 				</View>
 			</View>
 		</KeyboardAvoidingView>
@@ -74,5 +79,10 @@ const styles = StyleSheet.create({
 	listItemText: {
 		fontSize: 18,
 		color: Colors.primary
+	},
+	separator: {
+		width: '100%',
+		height: StyleSheet.hairlineWidth,
+		backgroundColor: Colors.gray
 	}
 })
