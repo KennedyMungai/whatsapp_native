@@ -55,7 +55,10 @@ const OTPPage = () => {
 						Terms of Service
 					</Text>
 				</Text>
-				<TouchableOpacity onPress={sendOTP} style={styles.button}>
+				<TouchableOpacity
+					onPress={sendOTP}
+					style={[styles.button, loading && styles.enabled]}
+				>
 					<Text>Next</Text>
 				</TouchableOpacity>
 			</View>
