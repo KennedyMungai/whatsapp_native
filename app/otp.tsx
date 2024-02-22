@@ -113,5 +113,14 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.lightGray,
 		padding: 10,
 		borderRadius: 10
+	},
+	enabled: {
+		backgroundColor: Colors.primary,
+		color: '#fff'
+	},
+	buttonText: {
+		color: Colors.gray,
+		fontSize: 22,
+		fontWeight: '500'
 	}
 })
