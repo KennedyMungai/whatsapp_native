@@ -1,10 +1,10 @@
-import { Text, View } from 'react-native'
+import { KeyboardAvoidingView, Text } from 'react-native'
 
 const OTPPage = () => {
 	return (
-		<View>
+		<KeyboardAvoidingView>
 			<Text>OTPPage</Text>
-		</View>
+		</KeyboardAvoidingView>
 	)
 }
 
