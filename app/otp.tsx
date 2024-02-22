@@ -57,7 +57,10 @@ const OTPPage = () => {
 				</Text>
 				<TouchableOpacity
 					onPress={sendOTP}
-					style={[styles.button, loading && styles.enabled]}
+					style={[
+						styles.button,
+						phoneNumber !== '' ? styles.enabled : null
+					]}
 				>
 					<Text>Next</Text>
 				</TouchableOpacity>
