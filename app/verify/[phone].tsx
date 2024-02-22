@@ -40,8 +40,8 @@ const PhoneNumberPage = () => {
 				6-digit activation code.
 			</Text>
 
-			<TouchableOpacity style={styles.button} onPress={verifyCode}>
-				<Text style={styles.buttonText}>Verify Button</Text>
+			<TouchableOpacity style={styles.button} onPress={resendCode}>
+				<Text style={styles.buttonText}>Didn't receive a verification code?</Text>
 			</TouchableOpacity>
 		</View>
 	)
