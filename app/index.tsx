@@ -45,7 +45,12 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		marginVertical: 20
 	},
-	description: {},
+	description: {
+		fontSize: 14,
+		textAlign: 'center',
+		marginBottom: 80,
+		color: Colors.gray
+	},
 	links: {
 		color: Colors.gray
 	}
