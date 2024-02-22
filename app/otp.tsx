@@ -32,6 +32,11 @@ const OTPPage = () => {
 					WhatsApp will need to verify your account. Carrier charges
 					may apply.
 				</Text>
+				<View style={styles.list}>
+					<View style={styles.listItem}>
+						<Text>Kenya</Text>
+					</View>
+				</View>
 			</View>
 		</KeyboardAvoidingView>
 	)
@@ -50,5 +55,18 @@ const styles = StyleSheet.create({
 	description: {
 		fontSize: 14,
 		color: Colors.gray
+	},
+	list: {
+		backgroundColor: '#fff',
+		width: '100%',
+		borderRadius: 10,
+		padding: 10
+	},
+	listItem: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		padding: 6,
+		marginBottom: 10
 	}
 })
