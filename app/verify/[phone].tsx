@@ -32,14 +32,11 @@ const PhoneNumberPage = () => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.legal}>
-				Read out{' '}
-				<Text style={styles.links} onPress={() => {}}>
-					Privacy Policy
-				</Text>{' '}
-				.{'Tap "Agree & Continue" to accept the '}
-				<Text style={styles.links} onPress={() => {}}>
-					Terms of Service
-				</Text>
+				We have sent you an SMS with a code to the number above.
+			</Text>
+			<Text style={styles.legal}>
+				To complete your phone number verification, please enter the
+				6-digit activation code.
 			</Text>
 		</View>
 	)
