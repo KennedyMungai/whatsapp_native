@@ -43,7 +43,9 @@ const OTPPage = () => {
 						/>
 						<Text
 							style={{
-								marginTop: 10
+								marginTop: 10,
+								fontSize: 20,
+								padding: 10,
 							}}
 						>
 							Sending Code
