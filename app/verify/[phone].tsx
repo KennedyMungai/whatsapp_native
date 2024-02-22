@@ -1,5 +1,5 @@
 import Colors from '@/constants/Colors'
-import { useLocalSearchParams } from 'expo-router'
+import { Stack, useLocalSearchParams } from 'expo-router'
 import { useState, useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import {
@@ -31,6 +31,7 @@ const PhoneNumberPage = () => {
 
 	return (
 		<View style={styles.container}>
+			<Stack.Screen options={{ title: phone }} />
 			<Text style={styles.legal}>
 				We have sent you an SMS with a code to the number above.
 			</Text>
