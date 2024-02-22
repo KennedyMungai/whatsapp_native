@@ -40,7 +40,7 @@ const OTPPage = () => {
 				</Text>
 				<View style={styles.list}>
 					<View style={styles.listItem}>
-						<Text style={styles.listItem}>Kenya</Text>
+						<Text style={styles.listItemText}>Kenya</Text>
 						<Ionicons
 							name='chevron-forward'
 							size={20}
