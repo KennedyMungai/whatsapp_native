@@ -52,17 +52,16 @@ const OTPPage = () => {
 						value={phoneNumber}
 						keyboardType='numeric'
 						autoFocus
+						placeholder='+254-123-456-789'
 						style={styles.input}
 						onChangeText={(masked, unmasked) => {
 							setPhoneNumber(masked)
 						}}
 						mask={[
-							'(',
 							'+',
 							/\d/,
 							/\d/,
 							/\d/,
-							')',
 							'-',
 							/\d/,
 							/\d/,
