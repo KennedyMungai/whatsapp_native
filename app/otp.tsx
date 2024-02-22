@@ -44,6 +44,16 @@ const OTPPage = () => {
 					</View>
 					<View style={styles.separator} />
 				</View>
+				<Text style={styles.legal}>
+					Read out{' '}
+					<Text style={styles.links} onPress={openLink}>
+						Privacy Policy
+					</Text>{' '}
+					.{'Tap "Agree & Continue" to accept the '}
+					<Text style={styles.links} onPress={openLink}>
+						Terms of Service
+					</Text>
+				</Text>
 			</View>
 		</KeyboardAvoidingView>
 	)
@@ -90,7 +100,7 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		color: '#000'
 	},
-	link: {
+	links: {
 		color: Colors.primary
 	}
 })
