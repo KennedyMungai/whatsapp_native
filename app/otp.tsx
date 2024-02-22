@@ -3,6 +3,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
 import {
+	ActivityIndicator,
 	KeyboardAvoidingView,
 	Linking,
 	Platform,
@@ -34,6 +35,21 @@ const OTPPage = () => {
 	return (
 		<KeyboardAvoidingView style={{ flex: 1 }}>
 			<View style={styles.container}>
+				{!loading && (
+					<View style={[StyleSheet.absoluteFill, styles.loading]}>
+						<ActivityIndicator
+							size='large'
+							color={Colors.primary}
+						/>
+						<Text
+							style={{
+								marginTop: 10
+							}}
+						>
+							Sending Code
+						</Text>
+					</View>
+				)}
 				<Text style={styles.description}>
 					WhatsApp will need to verify your account. Carrier charges
 					may apply.
@@ -177,5 +193,12 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		padding: 6,
 		marginTop: 10
+	},
+	loading: {
+		...StyleSheet.absoluteFillObject,
+		zIndex: 10,
+		backgroundColor: '#fff',
+		justifyContent: 'center',
+		alignItems: 'center'
 	}
 })
