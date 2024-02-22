@@ -28,7 +28,13 @@ const OTPPage = () => {
 		Linking.openURL('https://www.wikipedia.org')
 	}
 
-	const sendOTP = async () => {}
+	const sendOTP = async () => {
+		setLoading(true)
+		setTimeout(() => {
+			setLoading(false)
+			// router.push('/otp')
+		}, 2000)
+	}
 
 	const trySignIn = async () => {}
 
