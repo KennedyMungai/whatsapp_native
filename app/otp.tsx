@@ -84,5 +84,13 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: StyleSheet.hairlineWidth,
 		backgroundColor: Colors.gray
+	},
+	legal: {
+		fontSize: 12,
+		textAlign: 'center',
+		color: '#000'
+	},
+	link: {
+		color: Colors.primary
 	}
 })
