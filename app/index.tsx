@@ -1,13 +1,7 @@
 import welcomeImage from '@/assets/images/welcome.png'
 import Colors from '@/constants/Colors'
 import { Link } from 'expo-router'
-import {
-	Image,
-	StyleSheet,
-	Text,
-	TouchableOpacity,
-	View
-} from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
@@ -68,9 +62,11 @@ const styles = StyleSheet.create({
 	},
 	button: {
 		width: '100%',
-		alignItems: 'center'
+		alignItems: 'center',
+		padding: 3
 	},
 	buttonText: {
-		fontSize: 22
+		fontSize: 22,
+		color: Colors.primary
 	}
 })
