@@ -1,7 +1,7 @@
 import Colors from '@/constants/Colors'
 import { Stack, useLocalSearchParams } from 'expo-router'
 import { useState, useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import {
 	CodeField,
 	Cursor,
@@ -39,6 +39,10 @@ const PhoneNumberPage = () => {
 				To complete your phone number verification, please enter the
 				6-digit activation code.
 			</Text>
+
+			<TouchableOpacity style={styles.button} onPress={verifyCode}>
+				<Text style={styles.buttonText}>Verify Button</Text>
+			</TouchableOpacity>
 		</View>
 	)
 }
