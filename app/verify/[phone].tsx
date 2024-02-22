@@ -16,6 +16,12 @@ const PhoneNumberPage = () => {
 	}>()
 	const [code, setCode] = useState('')
 
+	const ref = useBlurOnFulfill({ value: code, cellCount: 6 })
+	const [props, getCellOnLayoutHandler] = useClearByFocusCell({
+		value: code,
+		setValue: setCode
+	})
+
 	useEffect(() => {
 		if (code.length === 6) {
 			console.log('Code', code)
@@ -40,8 +46,30 @@ const PhoneNumberPage = () => {
 				6-digit activation code.
 			</Text>
 
+			<CodeField
+				ref={ref}
+				{...props}
+				value={code}
+				onChangeText={setCode}
+				cellCount={6}
+				rootStyle={styles.codeFieldRoot}
+				keyboardType='number-pad'
+				textContentType='oneTimeCode'
+				renderCell={({ index, symbol, isFocused }) => (
+					<Text
+						key={index}
+						style={[styles.cellRoot, isFocused && styles.focusCell]}
+						onLayout={getCellOnLayoutHandler(index)}
+					>
+						{symbol || (isFocused ? <Cursor /> : null)}
+					</Text>
+				)}
+			/>
+
 			<TouchableOpacity style={styles.button} onPress={resendCode}>
-				<Text style={styles.buttonText}>Didn't receive a verification code?</Text>
+				<Text style={styles.buttonText}>
+					Didn't receive a verification code?
+				</Text>
 			</TouchableOpacity>
 		</View>
 	)
@@ -77,5 +105,30 @@ const styles = StyleSheet.create({
 	},
 	links: {
 		color: Colors.primary
+	},
+	codeFieldRoot: {
+		marginTop: 20,
+		width: 260,
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		gap: 4
+	},
+	cellRoot: {
+		width: 40,
+		height: 40,
+		justifyContent: 'center',
+		alignItems: 'center',
+		borderBottomColor: '#ccc',
+		borderBottomWidth: 1
+	},
+	cellText: {
+		color: '#000',
+		fontSize: 36,
+		textAlign: 'center'
+	},
+	focusCell: {
+		paddingBottom: 4,
+		borderBottomColor: '#000',
+		borderBottomWidth: 2
 	}
 })
