@@ -6,7 +6,10 @@ const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 const Page = () => {
 	return (
 		<View style={styles.container}>
-			<Image source={{uri: welcome_image}} style={{width: 200, height: 200}} />
+			<Image
+				source={{ uri: welcome_image }}
+				style={{ width: 200, height: 200 }}
+			/>
 			<Text>First Page</Text>
 		</View>
 	)
