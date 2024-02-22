@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
 		color: Colors.gray
 	},
 	links: {
-		color: Colors.gray
+		color: Colors.primary
 	}
 })
