@@ -50,6 +50,7 @@ const OTPPage = () => {
 					<View style={styles.separator} />
 					<MaskInput
 						value={phoneNumber}
+						keyboardType='numeric'
 						style={styles.input}
 						onChangeText={(masked, unmasked) => {
 							setPhoneNumber(masked)
@@ -173,7 +174,7 @@ const styles = StyleSheet.create({
 	input: {
 		backgroundColor: '#fff',
 		width: '100%',
-		fontSize: 16,
+		fontSize: 20,
 		padding: 6,
 		marginTop: 10
 	}
