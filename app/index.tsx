@@ -1,12 +1,14 @@
 import welcomeImage from '@/assets/images/welcome.png'
 import Colors from '@/constants/Colors'
 import { Link } from 'expo-router'
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
 const Page = () => {
-	const openLink = () => {}
+	const openLink = () => {
+		Linking.openURL('https://www.wikipedia.org')
+	}
 
 	return (
 		<View style={styles.container}>
