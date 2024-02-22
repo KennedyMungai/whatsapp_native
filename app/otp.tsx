@@ -51,6 +51,7 @@ const OTPPage = () => {
 					<MaskInput
 						value={phoneNumber}
 						keyboardType='numeric'
+						autoFocus
 						style={styles.input}
 						onChangeText={(masked, unmasked) => {
 							setPhoneNumber(masked)
