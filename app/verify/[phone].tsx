@@ -31,7 +31,7 @@ const PhoneNumberPage = () => {
 
 	return (
 		<View style={styles.container}>
-			<Stack.Screen options={{ title: phone }} />
+			<Stack.Screen options={{ headerTitle: phone }} />
 			<Text style={styles.legal}>
 				We have sent you an SMS with a code to the number above.
 			</Text>
