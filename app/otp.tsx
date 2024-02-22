@@ -1,7 +1,7 @@
 import Colors from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import {
 	KeyboardAvoidingView,
 	Linking,
@@ -11,6 +11,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import MaskInput from 'react-native-mask-input'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 const OTPPage = () => {
@@ -47,6 +48,32 @@ const OTPPage = () => {
 						/>
 					</View>
 					<View style={styles.separator} />
+					<MaskInput
+						value={phoneNumber}
+						onChangeText={(masked, unmasked) => {
+							setPhoneNumber(masked)
+
+							console.log(masked)
+							console.log(unmasked)
+						}}
+						mask={[
+							'(',
+							/\d/,
+							/\d/,
+							')',
+							' ',
+							/\d/,
+							/\d/,
+							/\d/,
+							/\d/,
+							/\d/,
+							'-',
+							/\d/,
+							/\d/,
+							/\d/,
+							/\d/
+						]}
+					/>
 				</View>
 				<Text style={styles.legal}>
 					Read out{' '}
