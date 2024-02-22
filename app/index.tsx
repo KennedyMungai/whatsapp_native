@@ -1,8 +1,12 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
+import welcomeImage from '@/assets/images/welcome.png'
+
+const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
 const Page = () => {
 	return (
 		<View style={styles.container}>
+			<Image source={{uri: welcome_image}} style={{width: 200, height: 200}} />
 			<Text>First Page</Text>
 		</View>
 	)
@@ -12,6 +16,7 @@ export default Page
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1
+		flex: 1,
+		padding: 20
 	}
 })
