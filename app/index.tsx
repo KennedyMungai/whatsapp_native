@@ -1,6 +1,14 @@
 import welcomeImage from '@/assets/images/welcome.png'
 import Colors from '@/constants/Colors'
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Link } from 'expo-router'
+import {
+	Image,
+	StyleSheet,
+	Text,
+	Touchable,
+	TouchableOpacity,
+	View
+} from 'react-native'
 
 const welcome_image = Image.resolveAssetSource(welcomeImage).uri
 
@@ -21,6 +29,11 @@ const Page = () => {
 					Terms of Service
 				</Text>
 			</Text>
+			<Link href={'/otp'}>
+				<TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>Agree & Continue</Text>
+				</TouchableOpacity>
+			</Link>
 		</View>
 	)
 }
