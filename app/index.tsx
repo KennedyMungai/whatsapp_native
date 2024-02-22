@@ -53,5 +53,9 @@ const styles = StyleSheet.create({
 	},
 	links: {
 		color: Colors.primary
+	},
+	button: {
+		width: '100%',
+		alignItems: 'center'
 	}
 })
