@@ -62,7 +62,14 @@ const OTPPage = () => {
 						phoneNumber !== '' ? styles.enabled : null
 					]}
 				>
-					<Text>Next</Text>
+					<Text
+						style={[
+							styles.buttonText,
+							phoneNumber !== '' ? styles.enabled : null
+						]}
+					>
+						Next
+					</Text>
 				</TouchableOpacity>
 			</View>
 		</KeyboardAvoidingView>
