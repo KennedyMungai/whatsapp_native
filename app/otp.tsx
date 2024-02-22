@@ -1,6 +1,13 @@
+import Colors from '@/constants/Colors'
 import { useRouter } from 'expo-router'
 import { useState } from 'react'
-import { KeyboardAvoidingView, Linking, Platform, Text } from 'react-native'
+import {
+	KeyboardAvoidingView,
+	Linking,
+	Platform,
+	StyleSheet,
+	Text
+} from 'react-native'
 
 const OTPPage = () => {
 	const [loading, setLoading] = useState(false)
@@ -13,6 +20,10 @@ const OTPPage = () => {
 		Linking.openURL('https://www.wikipedia.org')
 	}
 
+	const sendOTP = async () => {}
+
+	const trySignIn = async () => {}
+
 	return (
 		<KeyboardAvoidingView>
 			<Text>OTPPage</Text>
@@ -21,3 +32,13 @@ const OTPPage = () => {
 }
 
 export default OTPPage
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		padding: 20,
+		backgroundColor: Colors.background,
+		gap: 20
+	}
+})
