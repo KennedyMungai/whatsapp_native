@@ -6,7 +6,8 @@ import {
 	Linking,
 	Platform,
 	StyleSheet,
-	Text
+	Text,
+	View
 } from 'react-native'
 
 const OTPPage = () => {
@@ -25,8 +26,13 @@ const OTPPage = () => {
 	const trySignIn = async () => {}
 
 	return (
-		<KeyboardAvoidingView>
-			<Text>OTPPage</Text>
+		<KeyboardAvoidingView style={{ flex: 1 }}>
+			<View style={styles.container}>
+				<Text style={styles.description}>
+					WhatsApp will need to verify your account. Carrier charges
+					may apply.
+				</Text>
+			</View>
 		</KeyboardAvoidingView>
 	)
 }
@@ -40,5 +46,9 @@ const styles = StyleSheet.create({
 		padding: 20,
 		backgroundColor: Colors.background,
 		gap: 20
+	},
+	description: {
+		fontSize: 14,
+		color: Colors.gray
 	}
 })
