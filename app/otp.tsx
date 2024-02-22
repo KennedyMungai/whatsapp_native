@@ -11,6 +11,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 const OTPPage = () => {
 	const [loading, setLoading] = useState(false)
@@ -18,6 +19,8 @@ const OTPPage = () => {
 	const router = useRouter()
 
 	const keyboardVerticalOffset = Platform.OS === 'ios' ? 90 : 0
+
+	const { bottom } = useSafeAreaInsets()
 
 	const openLink = () => {
 		Linking.openURL('https://www.wikipedia.org')
@@ -60,7 +63,8 @@ const OTPPage = () => {
 					onPress={sendOTP}
 					style={[
 						styles.button,
-						phoneNumber !== '' ? styles.enabled : null
+						phoneNumber !== '' ? styles.enabled : null,
+						{ marginBottom: bottom }
 					]}
 					disabled={phoneNumber === ''}
 				>
