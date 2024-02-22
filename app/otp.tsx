@@ -1,4 +1,5 @@
 import Colors from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import { useState } from 'react'
 import {
@@ -34,7 +35,8 @@ const OTPPage = () => {
 				</Text>
 				<View style={styles.list}>
 					<View style={styles.listItem}>
-						<Text>Kenya</Text>
+						<Text style={styles.listItem}>Kenya</Text>
+						<Ionicons name='chevron-forward' size={20} color={Colors.gray} />
 					</View>
 				</View>
 			</View>
