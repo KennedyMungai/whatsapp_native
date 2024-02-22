@@ -35,7 +35,7 @@ const OTPPage = () => {
 	return (
 		<KeyboardAvoidingView style={{ flex: 1 }}>
 			<View style={styles.container}>
-				{!loading && (
+				{loading && (
 					<View style={[StyleSheet.absoluteFill, styles.loading]}>
 						<ActivityIndicator
 							size='large'
@@ -45,7 +45,7 @@ const OTPPage = () => {
 							style={{
 								marginTop: 10,
 								fontSize: 20,
-								padding: 10,
+								padding: 10
 							}}
 						>
 							Sending Code
