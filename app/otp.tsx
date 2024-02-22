@@ -52,9 +52,6 @@ const OTPPage = () => {
 						value={phoneNumber}
 						onChangeText={(masked, unmasked) => {
 							setPhoneNumber(masked)
-
-							console.log(masked)
-							console.log(unmasked)
 						}}
 						mask={[
 							'(',
