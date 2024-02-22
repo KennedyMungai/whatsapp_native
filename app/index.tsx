@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
 	},
 	welcome: {
 		width: '100%',
-		height: 300
+		height: 300,
+		marginBottom: 80
 	}
 })
