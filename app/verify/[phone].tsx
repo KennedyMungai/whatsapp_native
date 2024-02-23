@@ -64,7 +64,6 @@ const PhoneNumberPage = () => {
 						<Text style={styles.cellText}>
 							{symbol || (isFocused ? <Cursor /> : null)}
 						</Text>
-						{symbol || (isFocused ? <Cursor /> : null)}
 					</View>
 				)}
 			/>
