@@ -24,8 +24,11 @@ const PhoneNumberPage = () => {
 
 	useEffect(() => {
 		if (code.length === 6) {
-			console.log('Code', code)
-			// TODO: Verify code
+			if (signin === 'true') {
+				verifySignIn()
+			} else {
+				verifyCode()
+			}
 		}
 	}, [code])
 
@@ -108,7 +111,7 @@ const styles = StyleSheet.create({
 		width: 260,
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		gap: 4
+		gap: 8
 	},
 	cellRoot: {
 		width: 40,
