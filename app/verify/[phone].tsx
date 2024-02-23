@@ -56,13 +56,13 @@ const PhoneNumberPage = () => {
 				keyboardType='number-pad'
 				textContentType='oneTimeCode'
 				renderCell={({ index, symbol, isFocused }) => (
-					<Text
+					<View
 						key={index}
 						style={[styles.cellRoot, isFocused && styles.focusCell]}
 						onLayout={getCellOnLayoutHandler(index)}
 					>
 						{symbol || (isFocused ? <Cursor /> : null)}
-					</Text>
+					</View>
 				)}
 			/>
 
