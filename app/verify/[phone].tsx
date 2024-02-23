@@ -1,6 +1,6 @@
 import Colors from '@/constants/Colors'
 import { Stack, useLocalSearchParams } from 'expo-router'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import {
 	CodeField,
@@ -61,6 +61,9 @@ const PhoneNumberPage = () => {
 						style={[styles.cellRoot, isFocused && styles.focusCell]}
 						onLayout={getCellOnLayoutHandler(index)}
 					>
+						<Text style={styles.cellText}>
+							{symbol || (isFocused ? <Cursor /> : null)}
+						</Text>
 						{symbol || (isFocused ? <Cursor /> : null)}
 					</View>
 				)}
