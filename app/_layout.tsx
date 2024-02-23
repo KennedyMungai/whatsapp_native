@@ -21,7 +21,24 @@ export const unstable_settings = {
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
 
-export default function RootLayout() {
+const tokenCache = {
+	async getToken(key: string) {
+		try {
+			return SecureStore.getItemAsync(key)
+		} catch (err) {
+			return null
+		}
+	},
+	async saveToken(key: string, value: string) {
+		try {
+			return SecureStore.setItemAsync(key, value)
+		} catch (err) {
+			return
+		}
+	}
+}
+
+export default function InitialLayout() {
 	const [loaded, error] = useFonts({
 		SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
 		...FontAwesome.font
@@ -42,24 +59,25 @@ export default function RootLayout() {
 		return null
 	}
 
-	return <RootLayoutNav />
-}
-
-const tokenCache = {
-	async getToken(key: string) {
-		try {
-			return SecureStore.getItemAsync(key)
-		} catch (err) {
-			return null
-		}
-	},
-	async saveToken(key: string, value: string) {
-		try {
-			return SecureStore.setItemAsync(key, value)
-		} catch (err) {
-			return
-		}
-	}
+	return (
+		<Stack>
+			<Stack.Screen name='index' options={{ headerShown: false }} />
+			<Stack.Screen
+				name='otp'
+				options={{
+					headerTitle: 'Enter Your Phone Number',
+					headerBackVisible: false
+				}}
+			/>
+			<Stack.Screen
+				name='verify/[phone]'
+				options={{
+					headerTitle: 'Verify Your Phone Number',
+					headerBackTitle: 'Edit Number'
+				}}
+			/>
+		</Stack>
+	)
 }
 
 function RootLayoutNav() {
@@ -68,23 +86,7 @@ function RootLayoutNav() {
 			publishableKey={CLERK_PUBLISHABLE_KEY!}
 			tokenCache={tokenCache}
 		>
-			<Stack>
-				<Stack.Screen name='index' options={{ headerShown: false }} />
-				<Stack.Screen
-					name='otp'
-					options={{
-						headerTitle: 'Enter Your Phone Number',
-						headerBackVisible: false
-					}}
-				/>
-				<Stack.Screen
-					name='verify/[phone]'
-					options={{
-						headerTitle: 'Verify Your Phone Number',
-						headerBackTitle: 'Edit Number'
-					}}
-				/>
-			</Stack>
+			<InitialLayout />
 		</ClerkProvider>
 	)
 }
