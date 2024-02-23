@@ -80,7 +80,7 @@ export default function InitialLayout() {
 	)
 }
 
-function RootLayoutNav() {
+const RootLayoutNav = () => {
 	return (
 		<ClerkProvider
 			publishableKey={CLERK_PUBLISHABLE_KEY!}
