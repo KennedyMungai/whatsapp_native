@@ -1,10 +1,11 @@
-import { ClerkProvider } from '@clerk/clerk-expo'
+import { ClerkProvider, useAuth } from '@clerk/clerk-expo'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import { useFonts } from 'expo-font'
-import { Stack } from 'expo-router'
+import { Stack, useRouter, useSegments } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
+import { View } from 'react-native'
 
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY
 
@@ -39,6 +40,10 @@ const tokenCache = {
 }
 
 export default function InitialLayout() {
+	const router = useRouter()
+	const segments = useSegments()
+	const { isLoaded, isSignedIn } = useAuth()
+
 	const [loaded, error] = useFonts({
 		SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
 		...FontAwesome.font
@@ -55,8 +60,18 @@ export default function InitialLayout() {
 		}
 	}, [loaded])
 
-	if (!loaded) {
-		return null
+	useEffect(() => {
+		if (!isLoaded) return
+
+		const inTabsGroup = segments[0] === '(tabs)'
+
+		if (isSignedIn && !inTabsGroup) {
+			router.replace('/(tabs)/chats')
+		}
+	}, [isSignedIn])
+
+	if (!loaded && !isLoaded) {
+		return <View />
 	}
 
 	return (
